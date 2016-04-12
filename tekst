@@ -1,0 +1,35 @@
+1
+
+Explain basic security terms like authentication, authorization, confidentiality, integrity, SSL/TLS and provide examples of how you have used them.
+Authentication is where the user is cheeked and if allowed, the user can see the site, if not allowed it will not be possible to see the site or that page. It chould be like a login for a site.
+Authorization like above the user is allowed to see some pages on the site, it can be the user and the admin, the admin is authorization to see all sites, but the user is only allowed to see some of the sites on a webpage.
+Confidentiality is that is only the person the data belong to, there can acces it. So user 23 can only see data belong to user 23 and not other users….
+Integrity is that the site is what it suppose to be… the authenticity of the site, where no one can redirect you to anothere site, where you still belive it is the old site you on.
+SSL is a certificate (Secure socket layer) it cryptate the information between the user and the program, it will ensure that no one can see the data you sent or receive from the program in plain text. The SSL use 2 keys the first is a public key the other is an private key. The data there are sent need eachother to read the information. It is possible to create you own sll servicate or you can buy one the different is, if you buy one, you can give a guaranty that how you are…. But that also cost money.
+TLS Transport Layer Security
+
+2
+
+Explain basic security threads like: Cross Site Scripting (XSS), SQL Injection and whether something similar to SQL injection is possible with NoSQL databases like MongoDB, and DOS-attacks. Explain/demonstrate ways to cope with these problems
+Cross Site Scripting is where it’s the clientsite there there are under attack. Simple it is to type some javascript code into an input field. Even if the result will fail, the program still read the javascript code and compile it, we can prevent it to do so, if we take care of it…… we have to be sure that tags also will readen like normal text.  Its easy to chek if your site can be attacked…. Try type
+<script>alert(”not again”)script> insert it in a input field and if the alertbox apere, the site can be attacked this way
+
+3
+
+Explain, at a fundamental level, the technologies involved, and the steps required initialize a SSL connection between a browser and a server and how to use SSL in a secure way.
+The client and server shake hands after that the client authenticates the server certificate… the client encrypt with the public key, and send the information to the server…..
+
+4
+
+Explain and demonstrate ways to protect user passwords on our backends, and why this is necessary.
+The password always need to be protected… that will say no password in plain text. When we save a password we need to salt it. See app.model.users.js
+There we salt the password before it is stored in the db.
+
+5
+
+Explain about password hashing, salts and the difference between bcrypt and older (not recommended) algorithms like sha1, md5 etc.
+Hasing a password and when salt it, is the way to proceted your passwords in your database…. If you don’t think much of real securety, but more of speed when use sha1 or md5 2 old ways of hashing passwords. Its fast and that’s all. They don’t procet you much…. It take les that a minut to crack it, even salted. The bcrypt use an other algoritme, there are about 12 times as slow that sha1 and md5. But its hard to crack. With the mashines we have today it will take about 12 years to crack on password … just what im been told. Its also a newer algoritme that the other two, so for now it is so secure as it can be
+
+6
+
+Explain about JSON Web Tokens (jwt) and why they are very suited for a REST-based API
